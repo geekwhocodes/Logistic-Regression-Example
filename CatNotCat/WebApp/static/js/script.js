@@ -19,6 +19,8 @@ $(document).ready(function (e) {
                     $("#message").text("Image is !Cat");
                 }
                 
+            },error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                $("#message").text(errorThrown);
             }
         });
     }));
@@ -29,10 +31,10 @@ $(document).ready(function (e) {
             $("#message").empty(); // To remove the previous error message
             var file = this.files[0];
             var imagefile = file.type;
-            var match = ["image/jpeg", "image/png", "image/jpg"];
+            var match = ["image/jpeg", "image/jpg"];
             if (!((imagefile == match[0]) || (imagefile == match[1]) || (imagefile == match[2]))) {
                 $('#previewing').attr('src', 'noimage.png');
-                $("#message").html("<p id='error'>Please Select A valid Image File</p>" + "<h4>Note</h4>" + "<span id='error_message'>Only jpeg, jpg and png Images type allowed</span>");
+                $("#message").html("<p id='error'>Please Select A valid Image File</p>" + "<h4>Note</h4>" + "<span id='error_message'>Only jpeg and jpg Images type allowed</span>");
                 return false;
             }
             else {
