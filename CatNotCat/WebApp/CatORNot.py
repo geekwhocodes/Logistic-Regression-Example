@@ -1,12 +1,8 @@
-
 # coding: utf-8
 import os
 import numpy as np
-import matplotlib.pyplot as plt
-import h5py
 import scipy
 from PIL import Image
-from scipy import ndimage
 import pickle
 
 # In[106]:
